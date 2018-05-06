@@ -211,6 +211,80 @@ h3{
         font-size: 18px;
     }
 }
+h1 {
+    text-align: center;
+    font-size: 25px;
+    color: #333;
+}
 
+h2 {
+    text-align: center;
+    font-size: 35px;
+    padding-bottom: 10px;
+}
+
+#searchbutton {
+    background-color: #efefef; /* Green */
+    border: none;
+    color: #333;
+    padding: 5px 13px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 4px;
+}
+
+#fitnessbutton {
+
+    background-color: #efefef; /* Green */
+    border: none;
+    color: #333;
+    padding: 5px 13px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 8px;
+}
+
+#medicinebutton {
+
+    background-color: #efefef; /* Green */
+    border: none;
+    color: #333;
+    padding: 5px 13px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 8px;
+}
+
+#nutritionbutton {
+ 
+    background-color: #efefef; /* Green */
+    border: none;
+    color: #333;
+    padding: 5px 13px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 8px;
+}
+
+
+#submitbutton {
+    background-color: #efefef; /* Green */
+    border: none;
+    color: #333;
+    padding: 5px 13px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 4px;
+}
 
 
