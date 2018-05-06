@@ -1,7 +1,54 @@
 <!DOCTYPE html>
 <html>
+<title> GeneCheck </title> 
+<head>
 
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/Users/huiminchen/hackhlth18/user.html">Scan for Ingredients</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="http://www.ugrad.cs.ubc.ca/~s4i0b/SquishyBoots/index.html">Scan for Ingredients</a></li>
+    </ul>
+    <ul class="nav navbar-nav">
+      <li><a href="http://www.ugrad.cs.ubc.ca/~s4i0b/SquishyBoots/index.html">Scan for Ingredients</a></li>
+    </ul>
+    <ul class="nav navbar-nav">
+      <li><a href="http://www.ugrad.cs.ubc.ca/~s4i0b/SquishyBoots/index.html">User Profile</a></li>
+    </ul>
+    <div style = 'float:right;'>
+      <ul class="nav navbar-nav">
+      <li><a href="http://www.ugrad.cs.ubc.ca/~s4i0b/SquishyBoots/index.html">Log Out</a></li>
+    </ul>
+     </div>
+  </div>
+</nav>
+
+<!-- <body background="pix/bg1.jpg"> -->
+
+
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+<h1>Welcome to GeneCheck!</h1>
+
+
+<style>
+body {
+    background-color: lightblue;
+}
+</style>
+</head>
 <script>
+
 function identifyDrug()
 {
     setTimeout(function() {
@@ -78,6 +125,24 @@ if ('serviceWorker' in navigator) {
 
 </div>
 
+
+<p>Scan your product now</p>
+
+<button type="button" onclick="myFunction(product)">Click to check!</button>
+
+<p id="demo">Click to check your drug sensitivities</p>
+
+/* camera detection checks whether product is on sensitivity list*/ 
+<script>
+function myFunction(product) { 
+    if (data.includes(product)){
+    document.getElementById("demo").innerHTML = "Your sensitivite to this, don't use this product!";
+    }
+    else {
+        document.getElementById("demo").innerHTML = "This product does not contain ingredients from your given drug sensitivity list!";
+    }
+}
+</script>
 
 
 
