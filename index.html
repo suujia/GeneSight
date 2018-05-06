@@ -16,8 +16,11 @@
 
   <h2>Fitness</h2>
 
-</div>
-        
+</div>       
+</head>
+<center>
+<h1>Welcome to GeneCheck!</h1>
+<br>
 </head>
 <script>
 
@@ -47,12 +50,6 @@ function search(userId)
 
 var medNameToSearch = "";
 
-<<<<<<< HEAD
-    }, 3000);   
-}
-
-
-=======
 function setMedName(medName)
 {
     medNameToSearch = medName;
@@ -90,9 +87,7 @@ function searchInData(data)
     }
 }
 
->>>>>>> 05be9a54d6daa953f56dbc2b6a711167a6f6e3fb
 // Register Service Worker.
-
 
 if ('serviceWorker' in navigator) {
     // Path is relative to the origin, not project root.
@@ -104,26 +99,11 @@ if ('serviceWorker' in navigator) {
         console.error('Registration failed with ' + error);
     });
 }
-
- $('.dropdown').click(function(e) {
-  if ($(document).width() > 768) {
-    e.preventDefault();
-
-    var url = $(this).attr('href');
-
-    if (url !== '#') {
-      window.location.href = url;
-    }
-
-  }
-});
 </script>
-
 <script src="assets/js/script.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<head><center>
+<head>
 
-<h1>Welcome to GeneCheck!</h1>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -142,19 +122,17 @@ if ('serviceWorker' in navigator) {
     <link rel="manifest" href="manifest.json">
 
 </head>
+
 <body>
     <div>
-        <form>
-            Medication:<br>
-                <input type="text" id="medicationName"><br>
+        <form class="form-inline"> 
+            Search for Your Medication or take a picture:<br>
+                <input type="text" id="medicationName" type="text" class="form-control" placeholder="Medication"><br>
         </form>
 
-<<<<<<< HEAD
-=======
         <button type="button" onclick="search('123456')">Search</button>  <!-- hardcoded userId -->
     </div>
 
->>>>>>> 05be9a54d6daa953f56dbc2b6a711167a6f6e3fb
 <div class="container">
 
   <div class="app">
@@ -180,28 +158,21 @@ if ('serviceWorker' in navigator) {
 </div>
 
 
+<button type="button" onclick="myFunction(product)">Click to check!</button>
+<br>
+<p id="demo">Click to check your workout</p>
 
-<button type="button" onclick="myFunction(product)">Submit Photo</button>
-
-<p id="demo">Click to check your workout.</p>
-
-
-<!--  camera detection checks whether product is on sensitivity list  -->
 <script>
 function myFunction(product) { 
-    if (data.includes(product)){
+    // if (data.includes(product)){
     document.getElementById("demo").innerHTML = "Your sensitivite to this, don't use this product!";
     }
     else {
         document.getElementById("demo").innerHTML = "This product does not contain ingredients from your given drug sensitivity list!";
     }
 }
+
 </script>
-<<<<<<< HEAD
-
-
 </center>
-=======
->>>>>>> 05be9a54d6daa953f56dbc2b6a711167a6f6e3fb
 </body>
 </html>
