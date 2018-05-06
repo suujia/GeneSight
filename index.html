@@ -37,10 +37,10 @@ function identifyDrug()
 }  
 function search(userId)
 {
-    //alert("test search");
+    alert("test search");
     var medName = document.getElementById("medicationName").value;
     setMedName(medName);
-    //alert("search:" +medName+ " for: "+userId);
+    alert("search:" +medName+ " for: "+userId);
     var file = "./data/Gene-to-Drug-Sensitivity-Relationships.csv";
   
     $.ajax({
@@ -54,12 +54,12 @@ var medNameToSearch = "";
 function setMedName(medName)
 {
     medNameToSearch = medName;
-    //alert("setMedName: "+medNameToSearch);
+    alert("setMedName: "+medNameToSearch);
 }
 
 function searchInData(data)
 {
-    //alert(data);
+    alert(data);
     var allRows = data.split(/\r?\n|\xrwubmi5xrr/);
     var rowNum = 0;
     while(rowNum < allRows.length)
@@ -67,7 +67,7 @@ function searchInData(data)
         //alert(allRows.length);
         var rowCells = allRows[rowNum].split(',');
         var url="";
-        //alert("rowCells[2] = "+rowCells[2]+ " ----- medNameToSearch = "+medNameToSearch);
+        alert("rowCells[2] = "+rowCells[2]+ " ----- medNameToSearch = "+medNameToSearch);
         //var found = (rowCells[2] == medNameToSearch);
         //alert(found);
         if(rowCells[2].toUpperCase() == medNameToSearch.toUpperCase())
