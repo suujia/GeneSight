@@ -31,15 +31,31 @@ function identifyDrug()
             setTimeout(function() {
                 //alert('Searching for potentially harmful interactions between this drug and your genetic information');
                 //setTimeout(function() {alert('No potential harm detected');}, 1000);
-                searchInData("Tylenol");
+                //searchInData("Tylenol");
+                setMedName("Tylenol");
+                searchFromCamera("123456");
             }, 500);
     }, 2000);
 }  
 function search(userId)
 {
-    alert("test search");
+    //alert("test search");
     var medName = document.getElementById("medicationName").value;
     setMedName(medName);
+    alert("search:" +medName+ " for: "+userId);
+    var file = "./data/Gene-to-Drug-Sensitivity-Relationships.csv";
+  
+    $.ajax({
+            url: file,
+            dataType: 'text',
+            }).done(searchInData);
+}
+  
+function searchFromCamera(userId)
+{
+    alert("test search camera");
+    //var medName = document.getElementById("medicationName").value;
+    //setMedName(medName);
     alert("search:" +medName+ " for: "+userId);
     var file = "./data/Gene-to-Drug-Sensitivity-Relationships.csv";
   
