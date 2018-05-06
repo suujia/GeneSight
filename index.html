@@ -58,10 +58,10 @@ function identifyDrug()
                 setTimeout(function() {alert('No potential harm detected');}, 1000);
             }, 500);
     }, 3000);
-  
+}  
 function search(userId)
 {
-    //alert("test search");
+    alert("test search");
     var medName = document.getElementById("medicationName").value;
     setMedName(medName);
     alert("search:" +medName+ " for: "+userId);
@@ -92,18 +92,18 @@ function searchInData(data)
         var rowCells = allRows[rowNum].split(',');
         var url="";
         //alert("rowCells[2] = "+rowCells[2]+ " ----- medNameToSearch = "+medNameToSearch);
-        //var found = (rowCells[2] == medNameToSearch);
-        //alert(found);
+        var found = (rowCells[2] == medNameToSearch);
+        alert(found);
         if(rowCells[2].toUpperCase() == medNameToSearch.toUpperCase())
         {
             alert("searchInData found med");
-            url = "fail.html";
+            url = "./fail.html";
             window.location.replace(url);
             break;
         }
         if(rowNum == allRows.length - 1)
         {
-            url = "success.html";
+            url = "./success.html";
             window.location.replace(url);
             break;
         }
@@ -112,8 +112,6 @@ function searchInData(data)
     }
 }
 
-    
-}
 // Register Service Worker.
 
 if ('serviceWorker' in navigator) {
