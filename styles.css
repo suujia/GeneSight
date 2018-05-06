@@ -47,7 +47,7 @@ ul {
 body {
     background-color: #d7dee8;
     height: 800px;
-    
+    text-align: center;
 }
 
 *{
@@ -68,12 +68,18 @@ h1 {
     font-size: 25px;
 }
 
+h2 {
+    text-align: center;
+    font-size: 35px;
+    padding-bottom: 10px;
+}
+
 h3{
     font-size: 32px;
     color: #2c3e50;
     margin: 50px 0;
     text-align: center;
-    padding: 0 20px;
+    padding: 20px 20px;
 }
 
 .container{
@@ -93,18 +99,32 @@ h3{
     display: inline-block;
     font-size: 16px;
     position: absolute;
-    left: 50%;
+    left: 45%;
     top: 30%;
 }
 
 #fitnessbutton {
     position: absolute;
     top: 40%;
-    left: 50%;
+    left: 45%;
     background-color: #4CAF50; /* Green */
     border: none;
     color: white;
     padding: 15px 40px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+#nutritionbutton {
+    position: absolute;
+    top: 50%;
+    left: 45%;
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 33px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
