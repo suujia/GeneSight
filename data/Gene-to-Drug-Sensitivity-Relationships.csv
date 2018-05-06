@@ -1,12 +1,13 @@
 Variant,Allele/Gene,Drug Sensitivity - Hypersensitive Reaction,Drug Ingredients Sensitivities,Source
- rs1467558 T and C (one copy each),,"Acetaminophen (Tylenol) - higher ALT levels than having two Cs, a sign of liver toxicity",,https://www.snpedia.com/index.php/Acetaminophen
-rs2070959, UGT1A6,Aspirin - Aspirin Intolerance,,https://www.snpedia.com/index.php/Aspirin
-rs1105879, UGT1A6,Aspirin,,https://www.snpedia.com/index.php/Aspirin
-rs6759892, UGT1A6,Aspirin,,https://www.snpedia.com/index.php/Aspirin
+Â rs1467558 T and C (one copy each),,"Acetaminophen (Tylenol) - higher ALT levels than having two Cs, a sign of liver toxicity",,https://www.snpedia.com/index.php/Acetaminophen
+rs2070959,Â UGT1A6,Aspirin - Aspirin Intolerance,,https://www.snpedia.com/index.php/Aspirin
+rs1105879,Â UGT1A6,Aspirin,,https://www.snpedia.com/index.php/Aspirin
+rs6759892,Â UGT1A6,Aspirin,,https://www.snpedia.com/index.php/Aspirin
 rs1133607,ACSM2,Aspirin,,https://www.snpedia.com/index.php/Aspirin
-rs1799853,CYP2C9 ,Aspirin,,https://www.snpedia.com/index.php/Aspirin
-rs1057910,CYP2C9 ,Aspirin,,https://www.snpedia.com/index.php/Aspirin
-rs28371686,CYP2C9 ,Aspirin,,https://www.snpedia.com/index.php/Aspirin
-rs9332131,CYP2C9 ,Aspirin,,https://www.snpedia.com/index.php/Aspirin
-rs28371685,CYP2C9 ,Aspirin,,https://www.snpedia.com/index.php/Aspirin
- rs1799853,,Ibuprofen - GI Bleeding,,https://www.snpedia.com/index.php/Ibuprofen
+rs1799853,CYP2C9Â ,Aspirin,,https://www.snpedia.com/index.php/Aspirin
+rs1057910,CYP2C9Â ,Aspirin,,https://www.snpedia.com/index.php/Aspirin
+rs28371686,CYP2C9Â ,Aspirin,,https://www.snpedia.com/index.php/Aspirin
+rs9332131,CYP2C9Â ,Aspirin,,https://www.snpedia.com/index.php/Aspirin
+rs28371685,CYP2C9Â ,Aspirin,,https://www.snpedia.com/index.php/Aspirin
+rs28371685,CYP2C9Â ,Tylenol,,https://www.snpedia.com/index.php/Tylenol
+Â rs1799853,,Ibuprofen - GI Bleeding,,https://www.snpedia.com/index.php/Ibuprofen

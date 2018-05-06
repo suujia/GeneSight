@@ -27,13 +27,15 @@
 function identifyDrug()
 {
     setTimeout(function() {
-        alert('Drug is tylenol, super strength');
+        //alert('Drug is tylenol, super strength');
             setTimeout(function() {
-                alert('Searching for potentially harmful interactions between this drug and your genetic information');
+                //alert('Searching for potentially harmful interactions between this drug and your genetic information');
                 //setTimeout(function() {alert('No potential harm detected');}, 1000);
-                searchInData("Tylenol");
+                //searchInData("Tylenol");
+                //setMedName("Tylenol");
+                searchFromCamera("123456");
             }, 500);
-    }, 3000);
+    }, 2000);
 }  
 function search(userId)
 {
@@ -41,6 +43,21 @@ function search(userId)
     var medName = document.getElementById("medicationName").value;
     setMedName(medName);
     //alert("search:" +medName+ " for: "+userId);
+    var file = "./data/Gene-to-Drug-Sensitivity-Relationships.csv";
+  
+    $.ajax({
+            url: file,
+            dataType: 'text',
+            }).done(searchInData);
+}
+  
+function searchFromCamera(userId)
+{
+    //alert("test search camera");
+    //var medName = document.getElementById("medicationName").value;
+    setMedName("Tylenol");
+   // alert("search:" +medNameToSearch+ " for: "+userId);
+  //alert("yes");
     var file = "./data/Gene-to-Drug-Sensitivity-Relationships.csv";
   
     $.ajax({
@@ -60,8 +77,9 @@ function setMedName(medName)
 function searchInData(data)
 {
     //alert(data);
-    var allRows = data.split(/\r?\n|\xrwubmi5xrr/);
+    var allRows = data.split(/\r?\n|\r/);
     var rowNum = 0;
+    var found_med = false;
     while(rowNum < allRows.length)
     {
         //alert(allRows.length);
@@ -75,11 +93,13 @@ function searchInData(data)
             //alert("searchInData found med");
             url = "./fail.html";
             window.location.replace(url);
+            found_med = true;
             break;
         }
-        if(rowNum == allRows.length - 1)
+        if(!found_med)
         {
-            url = "./druginsights.html";
+            //alert("no find med");
+            url = "./success.html";
             window.location.replace(url);
             break;
         }
