@@ -2,50 +2,22 @@
 <html>
 <title> GeneCheck </title> 
 <head>
-
-<head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</head>
 
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="/Users/huiminchen/hackhlth18/user.html">Scan for Ingredients</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li><a href="http://www.ugrad.cs.ubc.ca/~s4i0b/SquishyBoots/index.html">Scan for Ingredients</a></li>
-    </ul>
-    <ul class="nav navbar-nav">
-      <li><a href="http://www.ugrad.cs.ubc.ca/~s4i0b/SquishyBoots/index.html">Scan for Ingredients</a></li>
-    </ul>
-    <ul class="nav navbar-nav">
-      <li><a href="http://www.ugrad.cs.ubc.ca/~s4i0b/SquishyBoots/index.html">User Profile</a></li>
-    </ul>
-    <div style = 'float:right;'>
-      <ul class="nav navbar-nav">
-      <li><a href="http://www.ugrad.cs.ubc.ca/~s4i0b/SquishyBoots/index.html">Log Out</a></li>
-    </ul>
-     </div>
-  </div>
-</nav>
+<div class="container">
+    <p align="left">  <nav class="navbar navbar-default">
+    <div class="container">
+   <a href="home.html" class="btn btn-default">
+   <span class="glyphicon glyphicon-triangle-left"></span>  </a> </p>
 
-<!-- <body background="pix/bg1.jpg"> -->
+  <h2>Fitness</h2>
 
-
-<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-
-<h1>Welcome to GeneCheck!</h1>
-
-
-<style>
-body {
-    background-color: lightblue;
-}
-</style>
+</div>
+        
 </head>
 <script>
 
@@ -59,11 +31,12 @@ function identifyDrug()
             }, 500);
 
 
-    }, 3000);
-
-    
+    }, 3000);   
 }
+
+
 // Register Service Worker.
+
 
 if ('serviceWorker' in navigator) {
     // Path is relative to the origin, not project root.
@@ -75,11 +48,26 @@ if ('serviceWorker' in navigator) {
         console.error('Registration failed with ' + error);
     });
 }
+
+ $('.dropdown').click(function(e) {
+  if ($(document).width() > 768) {
+    e.preventDefault();
+
+    var url = $(this).attr('href');
+
+    if (url !== '#') {
+      window.location.href = url;
+    }
+
+  }
+});
 </script>
+
 <script src="assets/js/script.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<head>
+<head><center>
 
+<h1>Welcome to GeneCheck!</h1>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -99,7 +87,6 @@ if ('serviceWorker' in navigator) {
 
 </head>
 <body>
-
 
 <div class="container">
 
@@ -126,13 +113,13 @@ if ('serviceWorker' in navigator) {
 </div>
 
 
-<p>Scan your product now</p>
 
-<button type="button" onclick="myFunction(product)">Click to check!</button>
+<button type="button" onclick="myFunction(product)">Submit Photo</button>
 
-<p id="demo">Click to check your drug sensitivities</p>
+<p id="demo">Click to check your workout.</p>
 
-/* camera detection checks whether product is on sensitivity list*/ 
+
+<!--  camera detection checks whether product is on sensitivity list  -->
 <script>
 function myFunction(product) { 
     if (data.includes(product)){
@@ -145,6 +132,6 @@ function myFunction(product) {
 </script>
 
 
-
+</center>
 </body>
 </html>
