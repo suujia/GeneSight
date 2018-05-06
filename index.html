@@ -30,16 +30,17 @@ function identifyDrug()
         alert('Drug is tylenol, super strength');
             setTimeout(function() {
                 alert('Searching for potentially harmful interactions between this drug and your genetic information');
-                setTimeout(function() {alert('No potential harm detected');}, 1000);
+                //setTimeout(function() {alert('No potential harm detected');}, 1000);
+                searchInData("Tylenol");
             }, 500);
     }, 3000);
 }  
 function search(userId)
 {
-    alert("test search");
+    //alert("test search");
     var medName = document.getElementById("medicationName").value;
     setMedName(medName);
-    alert("search:" +medName+ " for: "+userId);
+    //alert("search:" +medName+ " for: "+userId);
     var file = "./data/Gene-to-Drug-Sensitivity-Relationships.csv";
   
     $.ajax({
@@ -53,7 +54,7 @@ var medNameToSearch = "";
 function setMedName(medName)
 {
     medNameToSearch = medName;
-    alert("setMedName: "+medNameToSearch);
+    //alert("setMedName: "+medNameToSearch);
 }
 
 function searchInData(data)
@@ -67,18 +68,18 @@ function searchInData(data)
         var rowCells = allRows[rowNum].split(',');
         var url="";
         //alert("rowCells[2] = "+rowCells[2]+ " ----- medNameToSearch = "+medNameToSearch);
-        var found = (rowCells[2] == medNameToSearch);
-        alert(found);
+        //var found = (rowCells[2] == medNameToSearch);
+        //alert(found);
         if(rowCells[2].toUpperCase() == medNameToSearch.toUpperCase())
         {
-            alert("searchInData found med");
+            //alert("searchInData found med");
             url = "./fail.html";
             window.location.replace(url);
             break;
         }
         if(rowNum == allRows.length - 1)
         {
-            url = "./success.html";
+            url = "./druginsights.html";
             window.location.replace(url);
             break;
         }
