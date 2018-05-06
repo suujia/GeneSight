@@ -28,10 +28,10 @@ function identifyDrug()
     setTimeout(function() {
         alert('Drug is tylenol, super strength');
             setTimeout(function() {
-                alert('Searching for potentially harmful interactions between this drug and your genetic information');
-                setTimeout(function() {alert('No potential harm detected');}, 1000);
+                //alert('Searching for potentially harmful interactions between this drug and your genetic information');
+                searchInData("Tylenol");
             }, 500);
-    }, 3000);
+    }, 2000);
 }  
 function search(userId)
 {
@@ -77,6 +77,7 @@ function searchInData(data)
         }
         if(rowNum == allRows.length - 1)
         {
+            alert("last row in data");
             url = "./success.html";
             window.location.replace(url);
             break;
