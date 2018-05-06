@@ -58,6 +58,59 @@ function identifyDrug()
                 setTimeout(function() {alert('No potential harm detected');}, 1000);
             }, 500);
     }, 3000);
+  
+function search(userId)
+{
+    //alert("test search");
+    var medName = document.getElementById("medicationName").value;
+    setMedName(medName);
+    alert("search:" +medName+ " for: "+userId);
+    var file = "./data/Gene-to-Drug-Sensitivity-Relationships.csv";
+  
+    $.ajax({
+            url: file,
+            dataType: 'text',
+            }).done(searchInData);
+}
+
+var medNameToSearch = "";
+
+function setMedName(medName)
+{
+    medNameToSearch = medName;
+    alert("setMedName: "+medNameToSearch);
+}
+
+function searchInData(data)
+{
+    //alert(data);
+    var allRows = data.split(/\r?\n|\r/);
+    var rowNum = 0;
+    while(rowNum < allRows.length)
+    {
+        //alert(allRows.length);
+        var rowCells = allRows[rowNum].split(',');
+        var url="";
+        //alert("rowCells[2] = "+rowCells[2]+ " ----- medNameToSearch = "+medNameToSearch);
+        //var found = (rowCells[2] == medNameToSearch);
+        //alert(found);
+        if(rowCells[2].toUpperCase() == medNameToSearch.toUpperCase())
+        {
+            alert("searchInData found med");
+            url = "http://localhost/~yuningbie/HackHealth/fail.html";
+            window.location.replace(url);
+            break;
+        }
+        if(rowNum == allRows.length - 1)
+        {
+            url = "http://localhost/~yuningbie/HackHealth/success.html";
+            window.location.replace(url);
+            break;
+        }
+       
+        rowNum=rowNum+1;        
+    }
+}
 
     
 }
@@ -97,7 +150,14 @@ if ('serviceWorker' in navigator) {
 
 </head>
 <body>
+    <div>
+        <form>
+            Medication:<br>
+                <input type="text" id="medicationName"><br>
+        </form>
 
+        <button type="button" onclick="search('123456')">Search</button>  <!-- hardcoded userId -->
+    </div>
 
 <div class="container">
 
