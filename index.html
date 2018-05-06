@@ -57,7 +57,7 @@ function searchFromCamera(userId)
     //var medName = document.getElementById("medicationName").value;
     //setMedName(medName);
    // alert("search:" +medNameToSearch+ " for: "+userId);
-  alert("yes");
+  //alert("yes");
     var file = "./data/Gene-to-Drug-Sensitivity-Relationships.csv";
   
     $.ajax({
@@ -90,7 +90,7 @@ function searchInData(data)
         //alert(found);
         if(rowCells[2].toUpperCase() == medNameToSearch.toUpperCase())
         {
-            alert("searchInData found med");
+            //alert("searchInData found med");
             url = "./fail.html";
             window.location.replace(url);
             found_med = true;
@@ -98,7 +98,7 @@ function searchInData(data)
         }
         if(!found_med)
         {
-            alert("no find med");
+            //alert("no find med");
             url = "./success.html";
             window.location.replace(url);
             break;
