@@ -29,12 +29,68 @@ function identifyDrug()
                 alert('Searching for potentially harmful interactions between this drug and your genetic information');
                 setTimeout(function() {alert('No potential harm detected');}, 1000);
             }, 500);
+    }, 3000);
+}  
+function search(userId)
+{
+    alert("test search");
+    var medName = document.getElementById("medicationName").value;
+    setMedName(medName);
+    alert("search:" +medName+ " for: "+userId);
+    var file = "./data/Gene-to-Drug-Sensitivity-Relationships.csv";
+  
+    $.ajax({
+            url: file,
+            dataType: 'text',
+            }).done(searchInData);
+}
 
+var medNameToSearch = "";
 
+<<<<<<< HEAD
     }, 3000);   
 }
 
 
+=======
+function setMedName(medName)
+{
+    medNameToSearch = medName;
+    alert("setMedName: "+medNameToSearch);
+}
+
+function searchInData(data)
+{
+    //alert(data);
+    var allRows = data.split(/\r?\n|\r/);
+    var rowNum = 0;
+    while(rowNum < allRows.length)
+    {
+        //alert(allRows.length);
+        var rowCells = allRows[rowNum].split(',');
+        var url="";
+        //alert("rowCells[2] = "+rowCells[2]+ " ----- medNameToSearch = "+medNameToSearch);
+        var found = (rowCells[2] == medNameToSearch);
+        alert(found);
+        if(rowCells[2].toUpperCase() == medNameToSearch.toUpperCase())
+        {
+            alert("searchInData found med");
+            url = "./fail.html";
+            window.location.replace(url);
+            break;
+        }
+        if(rowNum == allRows.length - 1)
+        {
+            url = "./success.html";
+            window.location.replace(url);
+            break;
+        }
+       
+        rowNum=rowNum+1;        
+    }
+}
+
+>>>>>>> 05be9a54d6daa953f56dbc2b6a711167a6f6e3fb
 // Register Service Worker.
 
 
@@ -87,7 +143,18 @@ if ('serviceWorker' in navigator) {
 
 </head>
 <body>
+    <div>
+        <form>
+            Medication:<br>
+                <input type="text" id="medicationName"><br>
+        </form>
 
+<<<<<<< HEAD
+=======
+        <button type="button" onclick="search('123456')">Search</button>  <!-- hardcoded userId -->
+    </div>
+
+>>>>>>> 05be9a54d6daa953f56dbc2b6a711167a6f6e3fb
 <div class="container">
 
   <div class="app">
@@ -130,8 +197,11 @@ function myFunction(product) {
     }
 }
 </script>
+<<<<<<< HEAD
 
 
 </center>
+=======
+>>>>>>> 05be9a54d6daa953f56dbc2b6a711167a6f6e3fb
 </body>
 </html>
