@@ -12,14 +12,13 @@
     <p align="left">  <nav class="navbar navbar-default">
     <div class="container">
    <a href="home.html" class="btn btn-default">
-   <span class="glyphicon glyphicon-triangle-left"></span>  </a> </p>
-
-  <h2>Fitness</h2>
+   <span class="glyphicon glyphicon-triangle-left"></span>  </a>
+  <h2>Fitness</h2> </p>
 
 </div>       
 </head>
 <center>
-
+<h1>Welcome to GeneCheck!</h1>
 <br>
 </head>
 <script>
@@ -59,7 +58,7 @@ function setMedName(medName)
 function searchInData(data)
 {
     //alert(data);
-    var allRows = data.split(/\r?\n|\xrwubmi5xrr/);
+    var allRows = data.split(/\r?\n|\r/);
     var rowNum = 0;
     while(rowNum < allRows.length)
     {
@@ -133,6 +132,7 @@ if ('serviceWorker' in navigator) {
         </form>
 
         <button type="button" onclick="search('123456')">Search</button>  <!-- hardcoded userId -->
+        
     </div>
 
 <div class="container">
@@ -159,21 +159,11 @@ if ('serviceWorker' in navigator) {
 
 </div>
 
-<a href="druginsights.html">
-<button type="button" class "btn btn-default" onclick="myFunction(product)">Submit</button>
-</a>
-<br>
-<p id="demo">Click to check your workout</p>
 
-<script>
-function myFunction(product) { 
-    // if (data.includes(product)){
-    document.getElementById("demo").innerHTML = "Your sensitivite to this, don't use this product!";
-    }
-    else {
-        document.getElementById("demo").innerHTML = "This product does not contain ingredients from your given drug sensitivity list!";
-    }
-}
+<a href="druginsights.html" role="button" class "btn btn-default">Submit         </a>
+
+<br>
+<p id="demo">Click to check your drug sensitivities</p>
 
 </script>
 </center>
