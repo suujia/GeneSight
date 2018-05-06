@@ -5,6 +5,26 @@
     src: local('Material Icons'), local('MaterialIcons-Regular'), url(../fonts/MaterialIcons-Regular.woff2) format('woff2');
 }
 
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+/* navigation bar at top */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    }
+
+.navbar {
+    background-color: #333;
+    overflow: hidden;
+}
+
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+
 .material-icons {
     font-family: 'Material Icons';
     font-weight: normal;
@@ -32,6 +52,7 @@ html{
     font:normal 16px/1.5 sans-serif;
     color: #333;
 }
+
 
 h3{
     font-size: 32px;
@@ -159,8 +180,6 @@ h3{
     display: flex;
 }
 
-
-
 @media(max-width: 1000px){
     .container{
         margin: 40px;
@@ -198,4 +217,6 @@ h3{
         font-size: 18px;
     }
 }
+
+
 
