@@ -12,12 +12,14 @@
     <p align="left">  <nav class="navbar navbar-default">
     <div class="container">
    <a href="home.html" class="btn btn-default">
-   <span class="glyphicon glyphicon-triangle-left"></span>  </a>
-  <h2>Medicine</h2> </p>
+   <span class="glyphicon glyphicon-triangle-left"></span>  </a> </p>
+
+  <h2>Fitness</h2>
 
 </div>       
 </head>
 <center>
+
 <br>
 </head>
 <script>
@@ -25,19 +27,37 @@
 function identifyDrug()
 {
     setTimeout(function() {
-        alert('Drug is tylenol, super strength');
+        //alert('Drug is tylenol, super strength');
             setTimeout(function() {
                 //alert('Searching for potentially harmful interactions between this drug and your genetic information');
-                searchInData("Tylenol");
+                //setTimeout(function() {alert('No potential harm detected');}, 1000);
+                //searchInData("Tylenol");
+                //setMedName("Tylenol");
+                searchFromCamera("123456");
             }, 500);
     }, 2000);
 }  
 function search(userId)
 {
-    alert("test search");
+    //alert("test search");
     var medName = document.getElementById("medicationName").value;
     setMedName(medName);
-    alert("search:" +medName+ " for: "+userId);
+    //alert("search:" +medName+ " for: "+userId);
+    var file = "./data/Gene-to-Drug-Sensitivity-Relationships.csv";
+  
+    $.ajax({
+            url: file,
+            dataType: 'text',
+            }).done(searchInData);
+}
+  
+function searchFromCamera(userId)
+{
+    //alert("test search camera");
+    //var medName = document.getElementById("medicationName").value;
+    setMedName("Tylenol");
+   // alert("search:" +medNameToSearch+ " for: "+userId);
+  //alert("yes");
     var file = "./data/Gene-to-Drug-Sensitivity-Relationships.csv";
   
     $.ajax({
@@ -51,7 +71,7 @@ var medNameToSearch = "";
 function setMedName(medName)
 {
     medNameToSearch = medName;
-    alert("setMedName: "+medNameToSearch);
+    //alert("setMedName: "+medNameToSearch);
 }
 
 function searchInData(data)
@@ -59,24 +79,26 @@ function searchInData(data)
     //alert(data);
     var allRows = data.split(/\r?\n|\r/);
     var rowNum = 0;
+    var found_med = false;
     while(rowNum < allRows.length)
     {
         //alert(allRows.length);
         var rowCells = allRows[rowNum].split(',');
         var url="";
         //alert("rowCells[2] = "+rowCells[2]+ " ----- medNameToSearch = "+medNameToSearch);
-        var found = (rowCells[2] == medNameToSearch);
-        alert(found);
+        //var found = (rowCells[2] == medNameToSearch);
+        //alert(found);
         if(rowCells[2].toUpperCase() == medNameToSearch.toUpperCase())
         {
-            alert("searchInData found med");
+            //alert("searchInData found med");
             url = "./fail.html";
             window.location.replace(url);
+            found_med = true;
             break;
         }
-        if(rowNum == allRows.length - 1)
+        if(found_med == false)
         {
-            alert("last row in data");
+            //alert("no find med");
             url = "./success.html";
             window.location.replace(url);
             break;
@@ -132,7 +154,6 @@ if ('serviceWorker' in navigator) {
         </form>
 
         <button type="button" onclick="search('123456')" id="fitnessbutton">Search</button>  <!-- hardcoded userId -->
-        
     </div>
 
 <div class="container">
@@ -159,11 +180,21 @@ if ('serviceWorker' in navigator) {
 
 </div>
 
-
-<a href="druginsights.html" role="button" class "btn btn-default" id="fitnessbutton">Submit         </a>
-
+<a href="druginsights.html">
+<button type="button" class "btn btn-default" onclick="myFunction(product)" id="fitnessbutton">Submit</button>
+</a>
 <br>
-<p id="demo">Click to check your drug sensitivities</p>
+<p id="demo">Click to check your workout</p>
+
+<script>
+function myFunction(product) { 
+    // if (data.includes(product)){
+    document.getElementById("demo").innerHTML = "Your sensitivite to this, don't use this product!";
+    }
+    else {
+        document.getElementById("demo").innerHTML = "This product does not contain ingredients from your given drug sensitivity list!";
+    }
+}
 
 </script>
 </center>
