@@ -62,6 +62,7 @@ function searchInData(data)
     //alert(data);
     var allRows = data.split(/\r?\n|\r/);
     var rowNum = 0;
+    var found_med = false;
     while(rowNum < allRows.length)
     {
         //alert(allRows.length);
@@ -75,11 +76,12 @@ function searchInData(data)
             alert("searchInData found med");
             url = "./fail.html";
             window.location.replace(url);
+            found_med = true;
             break;
         }
-        if(rowNum == allRows.length - 1)
+        if(!found_med)
         {
-            alert("last row in database");
+            alert("no find med");
             url = "./success.html";
             window.location.replace(url);
             break;
